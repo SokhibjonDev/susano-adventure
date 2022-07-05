@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: url(../images/gamepack.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    overflow: hidden;
+}
+
+.block {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.person1 {
+    position: absolute;
+    left: 200px;
+    height: 190px;
+    bottom: 166px;
+    z-index: 99;
+}
+.heart{
+    width: 30px;
+    right: 0;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../public/start.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="health" style="display: flex; width: 100%; margin-left: 40px;">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img class="heart" src="../images/heart.png" alt="">
+    <img style="width: 30px; margin-left: auto; margin-right: 80px; " src="../images/coin.png" alt="">
+  </div>
+  <div class="person" style="display: flex;">
+    <img class="person1" src="../images/person.png" alt="" />
+  </div>
+  <div class="block">
+    <img width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+    <img style="margin-left: -4px" width="200px" src="../images/block.png" alt="" />
+  </div>
+  <script>
+    const person1 = document.querySelector(".person1");
+    let isRunning = false
+    let personSpeed = 20
+
+    function runSwitch(mode) {
+      if (mode) {
+        isRunning = true
+        person1.src = '../images/person-run.gif'
+        person1.style.bottom = '144px'
+      } else {
+        isRunning = false
+        person1.src = '../images/person.png'
+        person1.style.bottom = '166px'
+      }
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key == 'ArrowRight') {
+        let left = person1.offsetLeft + personSpeed
+        const screenWidth = document.querySelector('body').clientWidth
+
+        if (screenWidth > left + person1.clientWidth) {
+          person1.style.left = left + 'px'
+        }
+
+        person1.style.transform = 'rotateY(0deg)'
+
+        if (!isRunning) {
+          runSwitch(true)
+        }
+      }
+
+      if (e.key == 'ArrowLeft') {
+        let left = person1.offsetLeft - personSpeed
+
+        if (left !== 0) {
+          person1.style.left = left + 'px'
+        }
+
+        person1.style.transform = 'rotateY(180deg)'
+
+        if (!isRunning) {
+          runSwitch(true)
+        }
+      }
+    });
+
+    document.addEventListener('keyup', (e) => {
+      runSwitch(false)
+    })  
+  </script>
+</body>
+
+</html>
