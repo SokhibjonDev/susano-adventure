@@ -1,38 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap");
 * {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 body {
-    background: url(../images/gamepack.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100vh;
-    overflow: hidden;
+  background: url(../images/gamepack.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  overflow: hidden;
 }
 
 .block {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
 }
 
 .person1 {
-    position: absolute;
-    left: 200px;
-    height: 190px;
-    bottom: 166px;
-    z-index: 99;
+  position: absolute;
+  left: 200px;
+  height: 190px;
+  bottom: 166px;
+  z-index: 99;
 }
-.heart{
-    width: 30px;
-    right: 0;
+.heart {
+  width: 30px;
+  right: 0;
+}
+.coin {
+  display: flex;
+  align-items: center;
+  margin-left: 92%;
+  margin-top: 5px;
+  position: absolute;
+}
+.coin p {
+  color: gold;
+  margin-right: 10px;
+  font-size: 22px;
+  font-family: "Nunito Sans", sans-serif;
+}
+.enemy {
+  position: absolute;
+  left: 1500px;
+  height: 170px;
+  bottom: 166px;
+  z-index: 99;
+  transform: rotateY(180deg) scale(1.5) translateY(-19px);
+  width: 150px;
+  height: 120px;
+  /* opacity: 0.5; */
+}
+.enemy1 {
+  position: absolute;
+  left: 1500px;
+  transform: rotateY(180deg) scale(1.5) translateY(0px);
+  height: 170px;
+  bottom: 166px;
+  z-index: 99;
 }
