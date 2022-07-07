@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../public/start.css" />
-    <title>Document</title>
+    <title>Susano Adventure</title>
   </head>
 
   <body>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="person" style="display: flex">
-      <img class="person1" src="../images/person.png" alt="" />
+      <img class="person1" src="../images/person-1.gif" alt="" />
       <img class="enemy1" src="../images/enemy.gif" alt="" />
       <img class="enemy" src="../images/enemy-chidory.gif" alt="" />
     </div>
@@ -96,6 +96,7 @@
       const bash = document.querySelector(".bash");
       const enemy1 = document.querySelector(".enemy1");
       const enemy = document.querySelector(".enemy");
+      const heart = document.querySelector(".heart");
       let isRunning = false;
       let personSpeed = 20;
 
@@ -105,11 +106,13 @@
         if (mode) {
           isRunning = true;
           person1.src = "../images/person-run.gif";
-          person1.style.bottom = "144px";
+          person1.style.transform = "scale(.7) !important";
+          person1.style.bottom = "118px";
         } else {
           isRunning = false;
-          person1.src = "../images/person.png";
-          person1.style.bottom = "166px";
+          person1.src = "../images/person-1.gif";
+          person1.style.transform = "scale(1.070)";
+          person1.style.bottom = "133px";
         }
       }
 
@@ -126,32 +129,28 @@
             person1.style.left = left + "px";
           }
 
-          person1.style.transform = "rotateY(0deg)";
+          person1.style.transform = "rotateY(0deg) scale(.8)";
 
           if (!isRunning) {
             runSwitch(true);
           }
           console.log(left);
 
-          if (left > 950) {
+          if (left > 1340) {
             enemy.style.display = "block";
             enemy1.style.display = "none";
-            if (left >= 1585) {
-              enemy.style.display = "none";
-              enemy1.style.display = "block";
+            heart.style.display = "none";
+
+            if (left >= 1620) {
+              enemy.style.display = "block";
+              enemy1.style.display = "none";
               enemy.style.transform =
-                "rotateY(0deg) scale(1.5) translateY(0px)";
-              if (left >= 1690) {
+                "rotateY(0deg) scale(1.5) translateY(-19px)";
+              if (left >= 1680) {
                 enemy1.style.display = "block";
                 enemy.style.display = "none";
-                enemy.style.transform =
-                  "rotateY(0deg) scale(1.5) translateY(-19px)";
-                // if (left > 1720) {
-                //   enemy1.style.display = "block";
-                //   enemy.style.display = "none";
-                //   enemy.style.transform =
-                //     "rotateY(0deg) scale(1.5) translateY(-19px)";
-                // }
+                enemy1.style.transform =
+                  "rotateY(0deg) scale(1.5) translateY(0px)";
               }
             }
           }
@@ -164,11 +163,35 @@
             person1.style.left = left + "px";
           }
 
-          person1.style.transform = "rotateY(180deg)";
+          person1.style.transform =
+            "rotateY(180deg) scale(.8) translate(133px)";
 
           if (!isRunning) {
             runSwitch(true);
           }
+          console.log(left);
+          if (left <= 1640) {
+            enemy.style.display = "block";
+            enemy1.style.display = "none";
+            if (left < 1460) {
+              enemy.style.display = "block";
+              enemy1.style.display = "none";
+              enemy.style.transform =
+                "rotateY(180deg) scale(1.5) translateY(-19px)";
+              if (left <= 1200) {
+                enemy1.style.display = "block";
+                enemy.style.display = "none";
+                enemy1.style.transform =
+                  "rotateY(180deg) scale(1.5) translateY(0px)";
+              }
+            }
+          }
+        }
+        if (e.keyCode == "32") {
+          person1.style.bottom = "240px";
+          setTimeout(function (e) {
+            person1.style.bottom = "133px";
+          }, 100);
         }
       });
 
