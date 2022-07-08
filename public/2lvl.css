@@ -10,6 +10,15 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+body {
+  background: url(../images/forest.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 .prew {
   display: flex;
   justify-content: center;
@@ -24,26 +33,27 @@
   transform: translateX(154px);
   transition: 1s;
   z-index: 999999999999999999;
-}
-body {
-  background: url(../images/gamepack.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100vh;
-  overflow: hidden;
-}
-
-.block {
   position: absolute;
+}
+.block {
+  background: url(../images/obsidian.webp);
+  background-repeat: repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 98;
   bottom: 100px;
-  width: 100%;
+  width: 1920px;
+  height: 80px;
   overflow: hidden;
-  display: flex;
+}
+.person {
+  transform: translateY(985px);
 }
 
 .person1 {
   position: absolute;
   left: 200px;
-  z-index: 100;
+  z-index: 98;
   height: 230px;
   object-fit: contain;
   bottom: 133px;
@@ -68,18 +78,18 @@ body {
 .enemy {
   position: absolute;
   left: 1500px;
-  height: 170px;
-  bottom: 166px;
+  bottom: 190px;
   z-index: 99;
-  transform: rotateY(180deg) scale(1.5) translateY(-19px);
-  width: 150px;
-  height: 120px;
+  transform: rotateY(180deg) scale(1.5) translateY(17px);
+  width: 230px;
+  height: 330px;
 }
 .enemy1 {
   position: absolute;
   left: 1500px;
-  transform: rotateY(180deg) scale(1.5) translateY(0px);
-  height: 170px;
-  bottom: 166px;
+  transform: rotateY(180deg) scale(1.5) translateY(35px);
+  width: 300px;
+  height: 230px;
+  bottom: 200px;
   z-index: 99;
 }
