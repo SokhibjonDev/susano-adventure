@@ -5,6 +5,8 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 ::-webkit-scrollbar {

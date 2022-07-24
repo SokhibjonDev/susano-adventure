@@ -5,6 +5,8 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 ::-webkit-scrollbar {
@@ -69,7 +71,7 @@ body {
   position: absolute;
   left: 1500px;
   height: 170px;
-  bottom: 166px;
+  bottom: 176px;
   z-index: 99;
   transform: rotateY(180deg) scale(1.5) translateY(-19px);
   width: 150px;
@@ -80,6 +82,15 @@ body {
   left: 1500px;
   transform: rotateY(180deg) scale(1.5) translateY(0px);
   height: 170px;
-  bottom: 166px;
+  bottom: 176px;
   z-index: 99;
+}
+
+.cloud {
+  width: 130px;
+  position: absolute;
+  right: 295px;
+  bottom: 170px;
+  transform: rotateY(180deg);
+  z-index: 100;
 }

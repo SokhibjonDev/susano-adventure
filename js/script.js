@@ -95,12 +95,8 @@ document.addEventListener("keydown", (e) => {
     }
   }
   if (e.key == "Enter") {
-    enemy.style.display = "none";
-    enemy1.style.display = "none";
-    // enemy.style.transform = "translate(70px , -80px)";
-    // enemy.style.width = "0";
-    // enemy.style.height = "0px";
-    console.log(e.key);
+    enemy.remove();
+    enemy1.remove();
     const prew = document.querySelector(".prew");
     if (enemy.style.display == "none") {
       prew.style.transform = "translateX(4px)";

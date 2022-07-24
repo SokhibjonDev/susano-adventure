@@ -5,6 +5,8 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 ::-webkit-scrollbar {
@@ -19,20 +21,4 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: "Press Start 2P", cursive;
-}
-table {
-  width: 100% !important;
-  border-collapse: collapse;
-}
-table,
-td,
-th {
-  border: 1px solid #fff;
-  padding: 10px 70px;
-}
-
-.link {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 15px;
 }
